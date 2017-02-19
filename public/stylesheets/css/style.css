@@ -4,20 +4,13 @@
     color: #000;
     font-size: 12px; }
 
-html {
-  margin: 0px;
-  padding: 0px; }
-
-head {
-  padding: 0px;
-  margin: 0px; }
-
 body {
   padding: 0px;
-  margin: 0px;
+  margin: 0px auto;
   background-color: #faf7ed; }
 
 header {
+  box-sizing: border-box;
   margin: 0;
   padding: 0 10px 0;
   width: 100%;
