@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/head.ejs %>
+    <% include ../partials/head.ejs %>
+    <script>
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                auto: true,
+                slideWidth: 1500
+            })
+        });
+    </script>
 </head>
 
 <body>
     <% include ../partials/header.ejs %>
+    <div class='bxslider'>
+        <div><img src='images/carousel/image_02.jpg' alt='' width='1500' height='500'></div>
+        <div><img src='images/carousel/image_01.jpg' alt='' width='1500' height='500'></div>
+        <div><img src='images/carousel/image_03.jpg' alt='' width='1500' height='500'></div>
+        <div><img src='images/carousel/image_04.jpg' alt='' width='1500' height='500'></div>
+        <div><img src='images/carousel/image_05.jpg' alt='' width='1500' height='500'></div>
+    </div>
     
+    <!--
     <div class = 'top_image' style="background-image: url('images/top/image_01.jpg');">
         <p>脇山はこの世界に革命を起こす</p>
     </div>
+    -->
 
 
 </body>
