@@ -20,7 +20,7 @@
         margin-right: 15px;
         display:inline-block;
     
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             width: 25%;
             text-align: center;
             margin: 0px;
@@ -51,7 +51,12 @@
         display:inline-block;
         box-sizing: border-box;
         
-        @media screen and (max-width: 480px) {
+        @media screen and (min-width: 480px) and (max-width: 768px) {
+            width: 50%;
+            margin:10px 0px;
+        } 
+        
+        @media screen and (max-width: 479px) {
             width: 100%;
             margin:10px 0px;
         } 

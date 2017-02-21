@@ -62,7 +62,7 @@ img {
     letter-spacing: normal;
     margin-right: 15px;
     display: inline-block; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       .category-box__btn {
         width: 25%;
         text-align: center;
@@ -85,7 +85,11 @@ img {
     padding: 0px;
     display: inline-block;
     box-sizing: border-box; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 480px) and (max-width: 768px) {
+      .article-box_column {
+        width: 50%;
+        margin: 10px 0px; } }
+    @media screen and (max-width: 479px) {
       .article-box_column {
         width: 100%;
         margin: 10px 0px; } }
