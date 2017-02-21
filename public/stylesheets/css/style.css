@@ -4,10 +4,14 @@
     color: #000;
     font-size: 12px; }
 
+* {
+  margin: 0px;
+  padding: 0px; }
+
 body {
   padding: 0px;
-  margin: 0px auto;
-  background-color: #faf7ed; }
+  margin: 0px;
+  background-color: #fff; }
 
 header {
   box-sizing: border-box;
@@ -23,24 +27,90 @@ div {
 
 h1 {
   line-height: 70px;
-  font-family: garamond;
+  font-family: sans-serif;
   margin: 0px;
   font-size: 20px;
   color: #fff; }
+
+a {
+  text-decoration: none; }
+
+p {
+  margin: 0px;
+  padding: 0px; }
 
 img {
   padding: 0px;
   margin: 0px; }
 
-.top_image {
+.container {
+  width: 90%;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box; }
+
+.category-box {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 0px;
+  letter-spacing: -.40em; }
+  .category-box__btn {
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: sans-serif;
+    letter-spacing: normal;
+    margin-right: 15px;
+    display: inline-block; }
+    @media screen and (max-width: 480px) {
+      .category-box__btn {
+        width: 25%;
+        text-align: center;
+        margin: 0px; } }
+    .category-box__btn:hover {
+      color: #7fbfff;
+      cursor: pointer; }
+    .category-box__btn--state_current {
+      color: #7fbfff; }
+
+.article-box {
+  width: 100%;
   margin: 0px;
   padding: 0px;
-  height: 500px;
-  width: 100%;
-  background-image: url(".../images/top/image_01.jpg"); }
-  .top_image P {
-    text-align: center;
-    margin: 0px;
-    padding-top: 15%;
-    font-size: 30px;
-    color: #fff; }
+  letter-spacing: -.40em; }
+  .article-box_column {
+    letter-spacing: normal;
+    width: 25%;
+    margin: 20px 0px;
+    padding: 0px;
+    display: inline-block;
+    box-sizing: border-box; }
+    @media screen and (max-width: 480px) {
+      .article-box_column {
+        width: 100%;
+        margin: 10px 0px; } }
+    .article-box_column__img {
+      width: 80%;
+      border-radius: 50%;
+      margin: 0px auto;
+      padding: 0px;
+      display: block;
+      /*border: solid 2px #000;*/
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); }
+      .article-box_column__img:hover {
+        width: 85%;
+        border: solid 5px #7fbfff;
+        transition: 0.3s;
+        cursor: pointer; }
+    .article-box_column__title {
+      font-size: 14px;
+      color: #000;
+      text-align: center;
+      margin: 0px;
+      padding: 0px; }
+
+.test {
+  height: 400px; }
+
+.grade-cover {
+  opacity: 0.7; }

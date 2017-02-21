@@ -21,11 +21,55 @@
         <div><img src='images/carousel/image_05.jpg' alt=''></div>
     </div>
     
-    <!--
-    <div class = 'top_image' style="background-image: url('images/top/image_01.jpg');">
-        <p>脇山はこの世界に革命を起こす</p>
+    <script type='text/javascript'>
+        $(function(){
+            $('.category-box__btn').click(function(){
+                if($(this).hasClass('category-box__btn--state_current')){}
+                else{
+                    $('.category-box__btn--state_current').removeClass('category-box__btn--state_current');
+                    $(this).addClass('category-box__btn--state_current');
+                }
+            });
+        });
+    </script>
+    
+    <div class='container'>
+        <div class='category-box'>
+            <a href='#' class='category-box__btn category-box__btn--state_current'>All</a>
+            <a href='#' class='category-box__btn'>Node.JS</a>
+            <a href='#' class='category-box__btn'>Python</a>
+            <a href='#' class='category-box__btn'>Other</a>
+        </div>
     </div>
-    -->
+    
+    <div class='container'>
+        <div class='article-box'>
+            <div class='article-box_column'>
+                <img src='images/top/article_01.jpg' alt='' class='article-box_column__img'>
+                <p class='article-box_column__title'>ワッキー</p>
+            </div>
+            <div class='article-box_column'>
+                <img src='images/top/article_02.jpg' alt='' class='article-box_column__img'>
+                <p class='article-box_column__title'>ワッキー</p>
+            </div>
+            <div class='article-box_column'>
+                <img src='images/top/article_03.jpg' alt='' class='article-box_column__img'>
+                <p class='article-box_column__title'>ワッキー</p>
+            </div>
+            <div class='article-box_column'>
+                <img src='images/top/article_04.jpg' alt='' class='article-box_column__img'>
+                <p class='article-box_column__title'>ワッキー</p>
+            </div>
+            <div class='article-box_column'>
+                <img src='images/top/article_05.jpg' alt='' class='article-box_column__img'>
+                <p class='article-box_column__title'>ワッキー</p>
+            </div>
+            <div class='article-box_column'>
+                <img src='images/top/article_06.jpg' alt='' class='article-box_column__img'>
+                <p class='article-box_column__title'>ワッキー</p>
+            </div>
+        </div>
+    </div>
 
 
 </body>
