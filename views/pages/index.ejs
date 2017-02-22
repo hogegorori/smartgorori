@@ -24,12 +24,23 @@
     <script type='text/javascript'>
         $(function(){
             $('.category-box__btn').click(function(){
-                if($(this).hasClass('category-box__btn--state_current')){}
+                if($(this).hasClass('category-box__btn--state_current')){
+                    $('.article-content').fadeOut();
+                    $('.article-box_column').fadeIn();
+                }
                 else{
                     $('.category-box__btn--state_current').removeClass('category-box__btn--state_current');
                     $(this).addClass('category-box__btn--state_current');
+                    $('.article-content').fadeOut();
+                    $('.article-box_column').fadeIn();
                 }
             });
+            
+            $('.article-box_column__img').click(function(){
+                $('.article-box_column').fadeOut();
+                $(this).parent('.article-box_column').fadeIn();
+                $('.article-content').fadeIn();
+            })
         });
     </script>
     
@@ -46,27 +57,134 @@
         <div class='article-box'>
             <div class='article-box_column'>
                 <img src='images/top/article_01.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー</p>
+                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
             </div>
             <div class='article-box_column'>
                 <img src='images/top/article_02.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー</p>
+                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
             </div>
             <div class='article-box_column'>
                 <img src='images/top/article_03.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー</p>
+                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
             </div>
             <div class='article-box_column'>
                 <img src='images/top/article_04.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー</p>
+                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
             </div>
             <div class='article-box_column'>
                 <img src='images/top/article_05.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー</p>
+                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
             </div>
             <div class='article-box_column'>
                 <img src='images/top/article_06.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー</p>
+                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class='container'>
+        <div class='article-content article-content--number_1'>
+            <div class='article-content_inner-white'>
+                <p class="article-content_inner-white__day">2017-02-22</p>
+                <p class='article-content_inner-white__title'>ワッキー</p>
+                <p class='article-content_inner-white__desc'>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                    ここに本文書くんだよ。おい、怒<br>
+                <p>
             </div>
         </div>
     </div>
