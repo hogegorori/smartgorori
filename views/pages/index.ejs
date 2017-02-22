@@ -2,6 +2,8 @@
 <html>
 <head>
     <% include ../partials/head.ejs %>
+    
+    <!--
     <script>
         $(document).ready(function(){
             $('.bxslider').bxSlider({
@@ -9,10 +11,31 @@
             })
         });
     </script>
+    -->
+    
+    <script>
+        $(document).ready(function () {
+            $.getJSON('articles.json' , function(articles) {
+                for(var i in articles){
+                    for(var i2 in articles[i].content) {
+                        $('.article-box').append(
+                            "<div class='article-box_column'>" +
+                            "<img src='" + articles[i].content[i2].img + "' alt='' class='article-box_column__img'>" +
+                            "<p class='article-box_column__title'>" + articles[i].content[i2].title + "<br>" + 
+                            articles[i].content[i2].date + "</p>" + "</div>"
+                        );
+                    }
+                }
+            });
+        });
+    </script>
+    
 </head>
 
 <body>
     <% include ../partials/header.ejs %>
+    
+    <!--
     <div class='bxslider'>
         <div><img src='images/carousel/image_02.jpg' alt=''></div>
         <div><img src='images/carousel/image_01.jpg' alt=''></div>
@@ -20,10 +43,11 @@
         <div><img src='images/carousel/image_04.jpg' alt=''></div>
         <div><img src='images/carousel/image_05.jpg' alt=''></div>
     </div>
+    -->
     
     <script type='text/javascript'>
         $(function(){
-            $('.category-box__btn').click(function(){
+            $(document).on('click','.category-box__btn',function(){
                 if($(this).hasClass('category-box__btn--state_current')){
                     $('.article-content').fadeOut();
                     $('.article-box_column').fadeIn();
@@ -36,11 +60,11 @@
                 }
             });
             
-            $('.article-box_column__img').click(function(){
+            $(document).on('click','.article-box_column__img',function(){
                 $('.article-box_column').fadeOut();
                 $(this).parent('.article-box_column').fadeIn();
                 $('.article-content').fadeIn();
-            })
+            });
         });
     </script>
     
@@ -53,8 +77,11 @@
         </div>
     </div>
     
+    <div class='category'></div>
+    
     <div class='container'>
         <div class='article-box'>
+            <!--
             <div class='article-box_column'>
                 <img src='images/top/article_01.jpg' alt='' class='article-box_column__img'>
                 <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
@@ -79,6 +106,7 @@
                 <img src='images/top/article_06.jpg' alt='' class='article-box_column__img'>
                 <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
             </div>
+-->
         </div>
     </div>
     
