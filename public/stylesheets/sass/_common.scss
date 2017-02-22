@@ -71,10 +71,29 @@
             box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
             
             &:hover {
-                width:85%;
-                border:solid 5px rgb(127,191,255);
-                transition: 0.3s;
                 cursor: pointer;
+                animation: article-hover 0.4s linear 0s 2 normal;
+            }
+            
+            @keyframes article-hover {
+                0% {
+                    transform: scale(1,1);
+                }
+                20%{
+                    transform: scale(1.05,1);
+                }
+                40% {
+                    transform: scale(1.1,1.05);
+                }
+                60%{
+                    transform: scale(1.05,1.1);
+                }
+                80%{
+                    transform: scale(1,1.05);
+                }
+                100% {
+                    transform: scaleY(1,1);
+                }
             }
         }
     
