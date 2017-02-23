@@ -48,17 +48,59 @@
     <script type='text/javascript'>
         $(function(){
             $(document).on('click','.category-box__btn',function(){
+                    
                 if($(this).hasClass('category-box__btn--state_current')){
                     $('.article-content').fadeOut();
-                    $('.article-box_column').fadeIn();
+                    $('.article-box').empty();
                 }
                 else{
                     $('.category-box__btn--state_current').removeClass('category-box__btn--state_current');
                     $(this).addClass('category-box__btn--state_current');
                     $('.article-content').fadeOut();
-                    $('.article-box_column').fadeIn();
+                    $('.article-box').empty();
+                    
                 }
+                
+                var categoryNumber = $(this).val();
+                $('.test').text(categoryNumber);    
+                    
+                    $.getJSON('articles.json' , getArticle);
+                    function getArticle(data) {
+                        /*
+                        const d1 = new Date();
+                        while (true) {
+                            const d2 = new Date();
+                            if (d2 - d1 > 500) {
+                                break;
+                            }
+                        }
+                        */
+                        if (categoryNumber == '100') {
+                            for(var i in data){
+                                for(var i2 in data[i].content) {
+                                    $('.article-box').append(
+                                    "<div class='article-box_column'>" +
+                                    "<img src='" + data[i].content[i2].img + "' alt='' class='article-box_column__img'>" +
+                                    "<p class='article-box_column__title'>" + data[i].content[i2].title + "<br>" + 
+                                    data[i].content[i2].date + "</p>" + "</div>"
+                                    );
+                                }
+                            }
+                        }
+                        else {
+                            for(var i in data[categoryNumber].content) {
+                                $('.article-box').append(
+                                    "<div class='article-box_column'>" +
+                                    "<img src='" + data[categoryNumber].content[i].img + "' alt='' class='article-box_column__img'>" +
+                                    "<p class='article-box_column__title'>" + data[categoryNumber].content[i].title + "<br>" + 
+                                    data[categoryNumber].content[i].date + "</p>" + "</div>"
+                                );
+                            }
+                        }    
+                    }
+                
             });
+                
             
             $(document).on('click','.article-box_column__img',function(){
                 $('.article-box_column').fadeOut();
@@ -69,44 +111,20 @@
     </script>
     
     <div class='container'>
-        <div class='category-box'>
-            <a href='#' class='category-box__btn category-box__btn--state_current'>All</a>
-            <a href='#' class='category-box__btn'>Node.JS</a>
-            <a href='#' class='category-box__btn'>Python</a>
-            <a href='#' class='category-box__btn'>Other</a>
-        </div>
+        <ul class='category-box'>
+            <li class='category-box__btn category-box__btn--state_current' value='100'>All</li>
+            <li class='category-box__btn' value='1'>NodeJS</li>
+            <li class='category-box__btn' value='0'>Python</li>
+            <li class='category-box__btn' value='2'>Other</li>
+        </ul>
     </div>
     
-    <div class='category'></div>
+    <div class='container'>
+        <p class='test'>value</p>
+    </div>
     
     <div class='container'>
         <div class='article-box'>
-            <!--
-            <div class='article-box_column'>
-                <img src='images/top/article_01.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
-            </div>
-            <div class='article-box_column'>
-                <img src='images/top/article_02.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
-            </div>
-            <div class='article-box_column'>
-                <img src='images/top/article_03.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
-            </div>
-            <div class='article-box_column'>
-                <img src='images/top/article_04.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
-            </div>
-            <div class='article-box_column'>
-                <img src='images/top/article_05.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
-            </div>
-            <div class='article-box_column'>
-                <img src='images/top/article_06.jpg' alt='' class='article-box_column__img'>
-                <p class='article-box_column__title'>ワッキー<br>2017/02/22</p>
-            </div>
--->
         </div>
     </div>
     
