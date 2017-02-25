@@ -60,21 +60,12 @@
                     $('.article-box').empty();
                     
                 }
-                
+                /*
                 var categoryNumber = $(this).val();
                 $('.test').text(categoryNumber);    
                     
                     $.getJSON('articles.json' , getArticle);
                     function getArticle(data) {
-                        /*
-                        const d1 = new Date();
-                        while (true) {
-                            const d2 = new Date();
-                            if (d2 - d1 > 500) {
-                                break;
-                            }
-                        }
-                        */
                         if (categoryNumber == '100') {
                             for(var i in data){
                                 for(var i2 in data[i].content) {
@@ -98,7 +89,7 @@
                             }
                         }    
                     }
-                
+                */
             });
                 
             
@@ -111,12 +102,12 @@
     </script>
     
     <div class='container'>
-        <div class='category-box'>
-            <p class='category-box__btn category-box__btn--state_current' value='100'>All</p>
-            <p class='category-box__btn' value='1'>NodeJS</p>
-            <p class='category-box__btn' value='0'>Python</p>
-    <p class='category-box__btn' value='2'>Other</p>
-        </div>
+        <ul class='category-box'>
+            <li class='category-box__btn category-box__btn--state_current' value='100'>All</li>
+            <li class='category-box__btn' value='1'>NodeJS</li>
+            <li class='category-box__btn' value='0'>Python</li>
+            <li class='category-box__btn' value='2'>Other</li>
+        </ul>
     </div>
     
     <div class='container'>
