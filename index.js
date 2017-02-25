@@ -15,8 +15,26 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/cool', function(request, response) {
-  response.send(cool());
+app.get('/test/*', function(request, response) {
+  response.render('pages/test');
+});
+
+app.get('/python/*', function(request, response) {
+  response.render('pages/article');
+});
+
+app.get('/nodejs/*', function(request, response) {
+  response.render('pages/article');
+});
+
+app.get('/other/*', function(request, response) {
+  var category = request.url.split('/')[1];
+  var id = request.url.split('/')[2];
+  response.render('pages/article',
+    {
+      send_category: category,send_id: id
+    }
+  );
 });
 
 app.get('/times', function(request, response) {
