@@ -66,13 +66,15 @@ img {
     font-family: sans-serif;
     letter-spacing: normal;
     margin-right: 15px;
-    display: inline-block; }
-    @media screen and (max-width: 768px) {
-      .category-box__btn {
-        width: 25%;
-        font-size: 16px;
-        text-align: center;
-        margin: 0px; } }
+    display: inline-block;
+    /*
+        @media screen and (max-width: 768px) {
+            width: 25%;
+            font-size: 16px;
+            text-align: center;
+            margin: 0px;
+        } 
+        */ }
     .category-box__btn:hover {
       color: #7fbfff;
       cursor: pointer; }
