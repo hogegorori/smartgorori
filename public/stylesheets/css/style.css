@@ -172,6 +172,7 @@ img {
   margin: 10px auto;
   padding: 10px;
   border: 5px solid darkgray;
-  background-color: #000; }
+  background-color: #000;
+  box-sizing: border-box; }
   .dev-display p {
     color: crimson; }
