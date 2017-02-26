@@ -24,8 +24,8 @@
                         $('.article-box').append(
                             "<div class='article-box_column'>" +
                             "<a href='"+  articles[i].category + "/" + articles[i].content[i2].id + "'><img src='" + articles[i].content[i2].img + "' alt='' class='article-box_column__img'></a>" +
-                            "<p class='article-box_column__title'>" + articles[i].content[i2].title + "<br>" + 
-                            articles[i].content[i2].date + "</p>" + "</div>"
+                            "<p class='article-box_column__title'>" + articles[i].content[i2].title + "</p>" + 
+                            "<p class='article-box_column__date'>" + articles[i].content[i2].date + "</p>" + "</div>"
                         );
                     }
                 }
@@ -83,8 +83,8 @@
                                 $('.article-box').append(
                                     "<div class='article-box_column'>" +
                                     "<a href='"+  data[i].category + "/" + data[i].content[i2].id + "'><img src='" + data[i].content[i2].img + "' alt='' class='article-box_column__img'></a>" +
-                                    "<p class='article-box_column__title'>" + data[i].content[i2].title + "<br>" + 
-                                    data[i].content[i2].date + "</p>" + "</div>"
+                                    "<p class='article-box_column__title'>" + data[i].content[i2].title + "</p>" + 
+                                    "<p class='article-box_column__date'>" + data[i].content[i2].date + "</p>" + "</div>"
                                 );
                             }
                         }
@@ -94,8 +94,8 @@
                             $('.article-box').append(
                                 "<div class='article-box_column'>" +
                                 "<a href='"+  data[categoryNumber].category + "/" + data[categoryNumber].content[i].id + "'><img src='" + data[categoryNumber].content[i].img + "' alt='' class='article-box_column__img'></a>" +
-                                "<p class='article-box_column__title'>" + data[categoryNumber].content[i].title + "<br>" + 
-                                data[categoryNumber].content[i].date + "</p>" + "</div>"
+                                "<p class='article-box_column__title'>" + data[categoryNumber].content[i].title + "</p>" + 
+                                "<p class='article-box_column__date'>" + data[categoryNumber].content[i].date + "</p>" + "</div>"
                             );
                         }
                     }    
