@@ -61,7 +61,7 @@ img {
   letter-spacing: -.40em; }
   .category-box__btn {
     color: #000;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 800;
     font-family: 'Chewy', cursive;
     letter-spacing: normal;
@@ -70,7 +70,7 @@ img {
     @media screen and (max-width: 768px) {
       .category-box__btn {
         width: 25%;
-        font-size: 16px;
+        font-size: 22px;
         text-align: center;
         margin: 0px; } }
     .category-box__btn:hover {
