@@ -15,19 +15,21 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/test/*', function(request, response) {
+app.get('/test', function(request, response) {
   response.render('pages/test');
 });
 
-app.get('/python/*', function(request, response) {
+app.get('/python/:id', function(request, response) {
   response.render('pages/article');
 });
 
-app.get('/nodejs/*', function(request, response) {
-  response.render('pages/article');
+app.get('/nodejs/:id', function(request, response) {
+  response.render('pages/article', function(err, html) {
+    response.send(html);
+  });
 });
 
-app.get('/other/*', function(request, response) {
+app.get('/other/:id', function(request, response) {
   var category = request.url.split('/')[1];
   var id = request.url.split('/')[2];
   response.render('pages/article',

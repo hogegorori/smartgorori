@@ -2,7 +2,9 @@
 <html>
 <head>
     <% include ../partials/head.ejs %>
-    
+    <script src="../js/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css/jquery.bxslider.css" />
     <!--
     <script>
         $(document).ready(function(){
@@ -12,17 +14,27 @@
         });
     </script>
     -->
-    <!--
+    
     <script>
       $(document).ready(function () {
-        $.getJSON('articles.json' , function(articles) {
+        var isUrl = window.location.href;
+        var isCategory = isUrl.split('/')[3];
+        var isContentId = isUrl.split('/')[4];
+        
+        /*developer use only*/
+        $('.dev-display__url').text('url: ' + isUrl);
+        $('.dev-display__category').text('category: ' + isCategory);
+        $('.dev-display__content-id').text('content id: ' + isContentId);
+        
+        /*insert article*/
+        $.getJSON('../articles.json' , function(articles) {
           for(var i in articles){
-            if(articles[i].category == other) {
+            if(articles[i].category == isCategory) {
               for(var i2 in articles[i].content) {
-                if(articles[i].content[i2].id == 1) {
+                if(articles[i].content[i2].id == isContentId) {
                   $('.article-box').append(
                     "<div class='article-box_column'>" +
-                    "<a href='"+  articles[i].category + "/" + articles[i].content[i2].id + "'><img src='" + articles[i].content[i2].img + "' alt='' class='article-box_column__img'></a>" +
+                    "<a href='"+  articles[i].category + "/" + articles[i].content[i2].id + "'><img src='../" + articles[i].content[i2].img + "' alt='' class='article-box_column__img'></a>" +
                     "<p class='article-box_column__title'>" + articles[i].content[i2].title + "<br>" + 
                     articles[i].content[i2].date + "</p>" + "</div>"
                   );
@@ -31,7 +43,7 @@
                     "<div class='article-content_inner-white'>" +
                     "<p class='article-content_inner-white__day'>" + articles[i].content[i2].date + "</p>" +
                     "<p class='article-content_inner-white__title'>" + articles[i].content[i2].title + "</p>" +
-                    "<p class='article-content_inner-white__desc'>" + "test" + "</p>" +
+                    "<div class='article-content_inner-white__desc'>" + articles[i].content[i2].desc + "</div>" +
                     "</div>"
                   );
                 }  
@@ -41,7 +53,7 @@
         });
       });
     </script>
-    -->
+    
     
 </head>
 
@@ -60,8 +72,8 @@
     
     <script type='text/javascript'>
         $(function(){
-            $(document).on('click','.category-box__btn',function(){
-                    
+            /*delete article-bouls*/
+            $(document).on('click','.category-box__btn',function(){  
                 if($(this).hasClass('category-box__btn--state_current')){
                     $('.article-box').empty();
                 }
@@ -69,27 +81,27 @@
                     $('.category-box__btn--state_current').removeClass('category-box__btn--state_current');
                     $(this).addClass('category-box__btn--state_current');
                     $('.article-box').empty();
-                    
                 }
             });
                 
-            
+            /*
             $(document).on('click','.article-box_column__img',function(){
                 $('.article-box_column').fadeOut();
                 $(this).parent('.article-box_column').fadeIn();
                 $('.article-content').fadeIn();
             });
+            */
         });
         
         function funcAddArticles(categoryNumber) {
-                $.getJSON('articles.json' , getArticle);
+                $.getJSON('../articles.json' , getArticle);
                 function getArticle(data) {
                     if (categoryNumber == 100) {
                         for(var i in data){
                             for(var i2 in data[i].content) {
                                 $('.article-box').append(
                                     "<div class='article-box_column'>" +
-                                    "<a href='"+  data[i].category + "/" + data[i].content[i2].id + "'><img src='" + data[i].content[i2].img + "' alt='' class='article-box_column__img'></a>" +
+                                    "<a href='../"+  data[i].category + "/" + data[i].content[i2].id + "'><img src='../" + data[i].content[i2].img + "' alt='' class='article-box_column__img'></a>" +
                                     "<p class='article-box_column__title'>" + data[i].content[i2].title + "<br>" + 
                                     data[i].content[i2].date + "</p>" + "</div>"
                                 );
@@ -100,7 +112,7 @@
                         for(var i in data[categoryNumber].content) {
                             $('.article-box').append(
                                 "<div class='article-box_column'>" +
-                                "<a href='"+  data[categoryNumber].category + "/" + data[categoryNumber].content[i].id + "'><img src='" + data[categoryNumber].content[i].img + "' alt='' class='article-box_column__img'></a>" +
+                                "<a href='../"+  data[categoryNumber].category + "/" + data[categoryNumber].content[i].id + "'><img src='../" + data[categoryNumber].content[i].img + "' alt='' class='article-box_column__img'></a>" +
                                 "<p class='article-box_column__title'>" + data[categoryNumber].content[i].title + "<br>" + 
                                 data[categoryNumber].content[i].date + "</p>" + "</div>"
                             );
@@ -109,6 +121,14 @@
                 }
             }
     </script>
+  
+    <div class='container'>
+      <div class='dev-display'>
+        <p class='dev-display__url'>url: undefined</p>
+        <p class='dev-display__category'>category: undefined</p>
+        <p class='dev-display__content-id'>content id: undefined</p>
+      </div>
+    </div>
     
     <div class='container'>
         <div class='category-box'>
@@ -117,10 +137,6 @@
             <a class='category-box__btn' href='javascript:void(0)' onClick="funcAddArticles(0)">Python</a>
             <a class='category-box__btn' href='javascript:void(0)' onClick="funcAddArticles(2)">Other</a>
         </div>
-    </div>
-    
-    <div class='container'>
-        <p class='test'>test</p>
     </div>
     
     <div class='container'>
