@@ -153,12 +153,18 @@ img {
   box-sizing: border-box;
   border-radius: 15px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); }
+  @media screen and (max-width: 768px) {
+    .article-content {
+      padding: 0px; } }
   .article-content_inner-white {
     width: 100%;
     margin: auto;
     padding: 20px;
     background-color: #fff;
     box-sizing: border-box; }
+    @media screen and (max-width: 768px) {
+      .article-content_inner-white {
+        padding: 10px; } }
     .article-content_inner-white__day {
       font-family: 'Bad Script', cursive;
       font-size: 20px;
@@ -176,15 +182,12 @@ img {
       font-weight: 200;
       margin-bottom: 30px;
       box-sizing: border-box; }
-      .article-content_inner-white__desc img {
-        width: 80%; }
       @media screen and (max-width: 768px) {
         .article-content_inner-white__desc {
           font-size: 14px;
           font-weight: 100; } }
-    @media screen and (max-width: 768px) {
-      .article-content_inner-white {
-        padding: 10px 5px; } }
+      .article-content_inner-white__desc img {
+        width: 80%; }
 
 .dev-display {
   width: 100%;

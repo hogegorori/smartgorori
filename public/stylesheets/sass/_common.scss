@@ -134,12 +134,20 @@
     box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
     //display:none;
     
+    @media screen and (max-width: 768px) {
+            padding: 0px;
+    }
+    
     &_inner-white {
         width:100%;
         margin:auto;
         padding:20px;
         background-color:#fff;
         box-sizing: border-box;
+        
+        @media screen and (max-width: 768px) {
+            padding: 10px;
+        }
         
         &__day {
             font-family: 'Bad Script', cursive;
@@ -164,18 +172,14 @@
             margin-bottom: 30px;
             box-sizing: border-box;
             
-            img {
-                width: 80%;
-            }
-            
             @media screen and (max-width: 768px) {
                 font-size: 14px;
                 font-weight: 100;
             }
-        }
-        
-        @media screen and (max-width: 768px) {
-            padding: 10px 5px;
+            
+            img {
+                width: 80%;
+            }
         }
     }
 }
